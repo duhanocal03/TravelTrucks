@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    gap: 20px;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info {
+    flex: 1;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.features {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background: #2f6b5f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
