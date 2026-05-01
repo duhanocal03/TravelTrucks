@@ -1,0 +1,48 @@
+.checkboxLabel {
+    cursor: pointer;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 12px;
+    width: 112px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background-color: var(--color-white);
+}
+
+.hiddenInput {
+    display: none;
+    /* Standart inputu gizliyoruz */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-main-black);
+}
+
+/* SEÇİLİ DURUM (UI Kit'teki Sarı Çerçeve) */
+.checked {
+    border-color: var(--color-yellow-star);
+    /* #FFC531 */
+}
+
+.checkboxLabel:hover {
+    border-color: var(--color-green-light);
+    /* Hover'da yeşil çerçeve */
+}

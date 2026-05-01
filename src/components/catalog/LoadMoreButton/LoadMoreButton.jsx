@@ -1,5 +1,14 @@
+import { useDispatch } from "react-redux";
+import { loadMore } from "../../../features/campers/campersSlice";
+
 function LoadMoreButton() {
-  return <button style={{ marginTop: "20px" }}>Load More</button>;
+  const dispatch = useDispatch();
+
+  return (
+    <button onClick={() => dispatch(loadMore())}>
+      Load More
+    </button>
+  );
 }
 
 export default LoadMoreButton;

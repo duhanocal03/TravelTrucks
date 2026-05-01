@@ -1,0 +1,61 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(17, 18, 19, 0.4);
+    /* Yarı saydam koyu arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+    /* Arkadaki içeriği hafif flulaştırır */
+}
+
+.modal {
+    background-color: var(--color-white);
+    width: 90%;
+    max-width: 982px;
+    /* Tasarımdaki ideal genişlik */
+    max-height: 90vh;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow-y: auto;
+    /* İçerik uzunsa modal içinde kaydırma yapar */
+}
+
+.closeBtn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.closeBtn:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Modal içi kaydırma çubuğu tasarımı */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background-color: var(--color-border-gray);
+    border-radius: 10px;
+}

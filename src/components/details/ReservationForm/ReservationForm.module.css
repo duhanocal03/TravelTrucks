@@ -1,0 +1,25 @@
+.formContainer {
+    border: 1px solid var(--color-border-gray);
+    padding: 24px;
+    border-radius: 10px;
+}
+
+.inputField {
+    background-color: var(--color-white-pure);
+    /* #F7F7F7 */
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    color: var(--color-main-black);
+    margin-bottom: 14px;
+}
+
+.inputField::placeholder {
+    color: var(--color-gray-text);
+    /* #6C717B */
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 24px;
+}

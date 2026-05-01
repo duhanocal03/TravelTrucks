@@ -1,0 +1,22 @@
+.badge {
+    background-color: var(--color-white-bg);
+    /* #F2F4F7 */
+    color: var(--color-main-black);
+    padding: 12px 18px;
+    border-radius: 100px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Araç detayları listesindeki metinler */
+.detailLabel {
+    color: var(--color-navy-blue);
+    font-weight: 500;
+}
+
+.detailValue {
+    color: var(--color-main-black);
+    font-weight: 500;
+}

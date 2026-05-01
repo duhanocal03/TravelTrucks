@@ -1,33 +1,39 @@
-import styles from "./CamperCard.module.css";
+import { useNavigate } from 'react-router-dom';
+import styles from './CamperCard.module.css';
 
-function CamperCard() {
+const CamperCard = ({ camper }) => {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.card}>
       <img
-        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70"
-        alt="camper"
+        src={camper.gallery[0]?.original}
+        alt={camper.name}
+        className={styles.image}
       />
 
-      <div className={styles.info}>
-        <div className={styles.top}>
-          <h3>Road Bear C 23-25</h3>
-          <p>€8000.00</p>
+      <div className={styles.cardContent}>
+        <div className={styles.header}>
+          <h2>{camper.name}</h2>
+          <span>€{camper.price}</span>
         </div>
 
-        <p className={styles.desc}>
-          Comfortable camper with everything you need.
+        <p className={styles.meta}>
+          ⭐ {camper.rating} | 📍 {camper.location}
         </p>
 
-        <div className={styles.features}>
-          <span>AC</span>
-          <span>Kitchen</span>
-          <span>Bathroom</span>
-        </div>
+        <p className={styles.desc}>{camper.description}</p>
 
-        <button>Show More</button>
+        <button
+          className={styles.btn}
+          onClick={() => navigate(`/catalog/${camper.id}`)}
+        >
+          Show more
+        </button>
       </div>
     </div>
   );
-}
+};
+
 
 export default CamperCard;

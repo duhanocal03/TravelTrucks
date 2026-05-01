@@ -1,0 +1,44 @@
+.infoContainer {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #101828;
+    /* UI Kit Ana Metin Rengi */
+    margin: 0;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #101828;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #101828;
+    margin-top: 8px;
+}
+
+/* UI Kit'teki alt çizgi detayları için (Reviews kısmı) */
+.meta :global(.rating-text) {
+    text-decoration: underline;
+    cursor: pointer;
+}

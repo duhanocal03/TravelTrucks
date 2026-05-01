@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars {
+    display: flex;
+    color: #f2f4f7;
+    /* Boş yıldız rengi */
+}
+
+.filled {
+    color: #ffc531;
+    /* UI Kit sarı yıldız rengi */
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #101828;
+    text-decoration: underline;
+    /* Tasarımda yorum sayısı altı çizili */
+}

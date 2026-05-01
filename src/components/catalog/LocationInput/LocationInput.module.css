@@ -1,0 +1,50 @@
+.locationSection {
+    margin-bottom: 32px;
+}
+
+.label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-gray-text);
+    /* #6C717B */
+    margin-bottom: 8px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 18px;
+    color: var(--color-main-black);
+    pointer-events: none;
+    /* İkonun input tıklamasını engellememesi için */
+}
+
+.input {
+    width: 100%;
+    padding: 18px 18px 18px 48px;
+    /* İkon için soldan boşluk */
+    border: none;
+    border-radius: 12px;
+    background-color: var(--color-white-pure);
+    /* #F7F7F7 */
+    color: var(--color-main-black);
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.input:focus {
+    background-color: #ebebeb;
+    /* Focus olduğunda çok hafif koyulaşma */
+}
+
+.input::placeholder {
+    color: rgba(16, 24, 40, 0.6);
+    /* UI Kit'teki placeholder rengi */
+}

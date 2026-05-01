@@ -1,25 +1,43 @@
 .sidebar {
-    width: 250px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
-.options {
+.group {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
 }
 
-button {
-    padding: 8px;
-    border: 1px solid #ccc;
-    background: white;
+.option {
+    display: flex;
+    gap: 10px;
     cursor: pointer;
 }
 
+/* BUTTONS */
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 .searchBtn {
-    background: #2f6b5f;
+    width: 100%;
+    padding: 12px;
+    background: #839b8d;
     color: white;
     border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.clearBtn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    background: white;
 }

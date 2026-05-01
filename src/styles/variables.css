@@ -1,0 +1,26 @@
+:root {
+    /* UI Kit Colors */
+    --color-green-dark: #6D7B75;
+    /* Button Hover / Dark Theme */
+    --color-green-light: #829B91;
+    /* Main Button / Highlights */
+    --color-white-bg: #F2F4F7;
+    /* Page/Input Backgrounds */
+    --color-white-pure: #F7F7F7;
+    /* Secondary Backgrounds */
+    --color-yellow-star: #FFC531;
+    /* Rating Stars */
+    --color-gray-text: #6C717B;
+    /* Subtitles / Secondary Text */
+    --color-white: #FFFFFF;
+    /* White elements */
+    --color-navy-blue: #475467;
+    /* Body Text */
+    --color-main-black: #101828;
+    /* Headlines / Titles */
+    --color-border-gray: #DADDE1;
+    /* Input Borders / Dividers */
+
+    /* Fonts */
+    --font-family: 'Inter', sans-serif;
+}

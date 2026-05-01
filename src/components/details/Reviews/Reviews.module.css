@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.reviewCard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Avatar Yuvarlağı */
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f2f4f7;
+    /* Açık gri arkaplan */
+    color: #d84343;
+    /* UI Kit vurgu rengi */
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #101828;
+    margin: 0;
+}
+
+/* Yıldız Renkleri */
+.stars {
+    display: flex;
+    gap: 4px;
+}
+
+.filledStar {
+    color: #ffc531;
+    /* Sarı yıldız */
+}
+
+.emptyStar {
+    color: #f2f4f7;
+    /* Gri yıldız */
+}
+
+.comment {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #475467;
+    margin: 0;
+}
+
+.noReviews {
+    color: #475467;
+    font-size: 16px;
+}

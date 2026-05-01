@@ -1,0 +1,23 @@
+.container {
+    /* Tasarımdaki maksimum genişlik */
+    max-width: 1440px;
+
+    /* Sayfayı ortalar */
+    margin-left: auto;
+    margin-right: auto;
+
+    /* Mobil ve tabletler için yan boşluklar */
+    padding-left: 64px;
+    padding-right: 64px;
+
+    /* İçeriğin taşmasını engeller */
+    width: 100%;
+}
+
+/* Küçük ekranlar için adaptasyon */
+@media screen and (max-width: 768px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
