@@ -30,7 +30,7 @@ const CamperDetailsPage = () => {
   }, [id]);
 
   if (isLoading) return <Loader />;
-  if (!camper) return <div>Karavan bulunamadı.</div>;
+  if (!camper) return <div>Camper is not found!.</div>;
 
   return (
     <div className={styles.container}>

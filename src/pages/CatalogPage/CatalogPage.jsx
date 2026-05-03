@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// Feature importları
+
 import { fetchCampers } from '../../features/campers/campersAPI';
 import { incrementPage } from '../../features/campers/campersSlice';
-// Bileşen importları
+
 //import Container from '../../components/layout/container/Container';
 import FiltersSidebar from '../../components/catalog/FiltersSidebar/FiltersSidebar';
 import CamperCard from '../../components/catalog/CamperCard/CamperCard';
@@ -20,13 +20,15 @@ const CatalogPage = () => {
 
   useEffect(() => {
     dispatch(fetchCampers({ page, filters }));
-  }, [dispatch, page, filters]);
+  }, [dispatch]);
 
   const handleLoadMore = () => {
-    dispatch(incrementPage());
+    const nextPage = page + 1; // Mevcut sayfanın bir fazlası
+    dispatch(incrementPage()); // Redux state'indeki page'i artırır
+    dispatch(fetchCampers({ page: nextPage, filters }));
   };
 
-  const hasMore = items.length < total;
+  const hasMore = items.length > 0  && items.length < total;
 
   return (
     <section className={styles.section}>

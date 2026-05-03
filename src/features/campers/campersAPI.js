@@ -3,37 +3,46 @@ import axiosInstance from '../../services/axiosInstance';
 
 /**
  * Tüm karavanları filtre ve sayfa numarasına göre çeker.
- * @param {Object} params - { page, limit, filters }
  */
 export const fetchCampers = createAsyncThunk(
   'campers/fetchAll',
   async ({ page = 1, limit = 4, filters = {} }, thunkAPI) => {
     try {
-      // 1. Temel sayfalama parametrelerini oluştur
-      const searchParams = new URLSearchParams({
-        page: String(page),
-        limit: String(limit),
-      });
+      // 1. Parametreleri temiz bir obje olarak hazırla
+      const params = {};
 
-      // 2. Filtreleri dinamik olarak URL'e ekle
-      // FiltersSidebar'dan gelen objeyi (ac, kitchen, form, location vb.) tarar
-      Object.keys(filters).forEach((key) => {
-        const value = filters[key];
-        
-        // Sadece değeri olan (boş olmayan) filtreleri ekle
-        if (value !== undefined && value !== null && value !== '' && value !== false) {
-          searchParams.append(key, value);
-        }
-      });
+      // Sayfalama parametrelerini ekle (MockAPI için string olması daha güvenli)
+      params.page = String(page);
+      params.limit = String(limit);
 
-      // 3. İstek gönder: örn. /campers?page=1&limit=4&location=Kyiv&ac=true
-      const response = await axiosInstance.get(`/campers?${searchParams.toString()}`);
+      // 2. Filtreleri kontrol ederek ekle
+      if (filters && typeof filters === 'object') {
+        Object.keys(filters).forEach((key) => {
+          const value = filters[key];
+
+          // Boş string, null veya undefined olanları asla ekleme
+          if (value !== '' && value !== null && value !== undefined) {
+            // Boolean filtreleri (AC, Kitchen vb.) sadece true ise ekle
+            if (typeof value === 'boolean') {
+              if (value === true) params[key] = value;
+            } else {
+              // String filtreleri (location, form vb.) ekle
+              params[key] = value;
+            }
+          }
+        });
+      }
+
+      // 3. İstek gönder
+      // Axios, params objesini otomatik olarak ?key=value formatına çevirir.
+      const response = await axiosInstance.get('/campers', { params });
       
-      // MockAPI bazen direkt array döner, bazen total bilgisini header'da verir.
-      // Eğer backend yapın farklıysa burayı return response.data.items olarak güncelleyebilirsin.
       return response.data; 
     } catch (error) {
-      // Axios hata mesajını Redux state'ine gönder
+      // API 404 döndüğünde "Bulunamadı" mesajını yakala
+      if (error.response?.status === 404) {
+        return thunkAPI.rejectWithValue('No campers found matching your criteria.');
+      }
       return thunkAPI.rejectWithValue(
         error.response?.data?.message || 'Failed to fetch campers'
       );
@@ -41,10 +50,6 @@ export const fetchCampers = createAsyncThunk(
   }
 );
 
-/**
- * ID bazlı tek bir karavan detayı çeker (Modal veya Detail sayfası için).
- * @param {string} id - Karavan ID'si
- */
 export const fetchCamperById = createAsyncThunk(
   'campers/fetchById',
   async (id, thunkAPI) => {

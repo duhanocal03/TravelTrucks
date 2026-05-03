@@ -28,13 +28,12 @@
 .navLinks {
     display: flex;
     gap: 32px;
-    /* Linkleri tam merkeze almak istersen: */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Eğer linkler logonun hemen biraz uzağında başlasın dersen position: absolute yerine şunu kullan:
+/*linkler logonun hemen biraz uzağında olacaksa position: absolute yerine :
 .navLinks {
   display: flex;
   gap: 32px;
@@ -44,7 +43,7 @@
 
 .link {
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color: var(--color-main-black);
     transition: color 0.3s ease;

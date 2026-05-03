@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  location: '',
-  form: '',         // 'alcove', 'panelvan' vb.
-  engine: '',       // 'diesel', 'petrol' vb.
-  transmission: '', // 'automatic', 'manual'
+  location: "",
+  engine: "",
+  form: "",
+  transmission: "",
 };
 
 const filtersSlice = createSlice({
-  name: 'filters',
+  name: "filters",
   initialState,
   reducers: {
-    updateFilter: (state, action) => {
+    setFilter: (state, action) => {
       const { name, value } = action.payload;
       state[name] = value;
     },
@@ -19,5 +19,5 @@ const filtersSlice = createSlice({
   },
 });
 
-export const { updateFilter, resetFilters } = filtersSlice.actions;
+export const { setFilter, resetFilters } = filtersSlice.actions;
 export default filtersSlice.reducer;

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: var(--color-white-pure);
 }
 
 .group {
@@ -12,8 +13,13 @@
 
 .option {
     display: flex;
-    gap: 10px;
-    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+}
+
+.option input {
+    width: 16px;
+    height: 16px;
 }
 
 /* BUTTONS */
