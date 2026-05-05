@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../features/campers/campersAPI';
 import { incrementPage } from '../../features/campers/campersSlice';
 //for fix 
-import FiltersSidebar from "../../components/catalog/FiltersSidebar/FiltersSidebar";
+import FiltersSidebar from '../../components/catalog/FiltersSidebar/FiltersSidebar';
 import CamperCard from '../../components/catalog/CamperCard/CamperCard';
 import Loader from '../../components/common/Loader/Loader';
 import styles from './CatalogPage.module.css';
