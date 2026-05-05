@@ -32,17 +32,6 @@ const ReservationForm = () => {
           className={styles.input}
           onChange={(e) => setFormData({...formData, email: e.target.value})}
         />
-        <input 
-          type="date" 
-          required 
-          className={styles.input}
-          onChange={(e) => setFormData({...formData, date: e.target.value})}
-        />
-        <textarea 
-          placeholder="Comment" 
-          className={styles.textarea}
-          onChange={(e) => setFormData({...formData, comment: e.target.value})}
-        ></textarea>
         
         <Button type="submit" variant="primary" className={styles.submitBtn}>
           Send

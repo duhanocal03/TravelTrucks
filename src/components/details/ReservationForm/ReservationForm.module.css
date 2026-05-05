@@ -1,25 +1,79 @@
-.formContainer {
-    border: 1px solid var(--color-border-gray);
-    padding: 24px;
-    border-radius: 10px;
+.formCard {
+    border: 1px solid #dadde1;
+    border-radius: 12px;
+    padding: 44px;
+    /* İçerideki ferahlığı koruyoruz */
+    width: 600px;
+    /* Dış konteynerine tam yayılmasını sağlar */
+    min-height: 400px;
+    /* Görseldeki o yüksekliği ve formu dengelemek için */
+    display: flex;
+    flex-direction: column;
 }
 
-.inputField {
-    background-color: var(--color-white-pure);
-    /* #F7F7F7 */
+.title {
+    font-weight: 600;
+    font-size: 24px;
+    /* Başlığı bir tık daha belirgin yaptık */
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: #101828;
+}
+
+.subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6c717b;
+    margin-bottom: 32px;
+    /* Subtitle sonrası boşluğu artırdık */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Inputlar arası mesafeyi açtık */
+    flex-grow: 1;
+}
+
+.input {
+    width: 100%;
+    padding: 20px;
+    /* Daha dolgun inputlar */
+    background-color: #f7f7f7;
     border: none;
     border-radius: 12px;
-    padding: 18px;
-    color: var(--color-main-black);
-    margin-bottom: 14px;
+    font-size: 16px;
+    color: #101828;
+    outline: none;
 }
 
-.inputField::placeholder {
-    color: var(--color-gray-text);
-    /* #6C717B */
+/* Textarea (Yorum alanı) varsa daha geniş dursun */
+.textarea {
+    min-height: 120px;
+    resize: none;
 }
 
+/* Butonu resimdeki gibi geniş ve büyük yapıyoruz */
 .submitBtn {
     width: 100%;
-    margin-top: 24px;
+    /* Resimdeki gibi tam genişlik */
+    padding: 18px;
+    /* Daha yüksek/etki bırakan bir buton */
+    background-color: #819b8d;
+    /* Sage Green */
+    color: #ffffff;
+    border: none;
+    border-radius: 200px;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+    background-color: #718a7d;
+    transform: translateY(-1px);
+    /* Hafif bir etkileşim hissi */
 }

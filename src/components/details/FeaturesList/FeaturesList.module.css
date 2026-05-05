@@ -1,22 +1,63 @@
-.badge {
-    background-color: var(--color-white-bg);
-    /* #F2F4F7 */
-    color: var(--color-main-black);
-    padding: 12px 18px;
-    border-radius: 100px;
-    font-weight: 500;
+.container {
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+/* TITLE */
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #101828;
+    margin-bottom: 16px;
+}
+
+/* BADGES */
+.badges {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 16px;
 }
 
-/* Araç detayları listesindeki metinler */
-.detailLabel {
-    color: var(--color-navy-blue);
+.badge {
+    background: #eaecef;
+    color: #101828;
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-size: 14px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
-.detailValue {
-    color: var(--color-main-black);
+/* DIVIDER */
+.divider {
+    height: 1px;
+    background: #e4e7ec;
+    margin-bottom: 16px;
+}
+
+/* LIST */
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ROW */
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #475467;
+}
+
+/* RIGHT VALUE */
+.value {
+    color: #101828;
     font-weight: 500;
+    text-transform: capitalize;
 }

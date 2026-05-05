@@ -1,75 +1,76 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axiosInstance from '../../services/axiosInstance';
-import Loader from '../../components/common/Loader/Loader';
-import Gallery from '../../components/details/Gallery/Gallery';
-import CamperInfo from '../../components/details/CamperInfo/CamperInfo';
-import Reviews from '../../components/details/Reviews/Reviews';
-import ReservationForm from '../../components/details/ReservationForm/ReservationForm';
-import FeaturesList from '../../components/details/FeaturesList/FeaturesList';
-import styles from './CamperDetailsPage.module.css';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import api from "../../services/axiosInstance";
+
+import Loader from "../../components/common/Loader/Loader";
+import Gallery from "../../components/details/Gallery/Gallery";
+import CamperInfo from "../../components/details/CamperInfo/CamperInfo";
+import Reviews from "../../components/details/Reviews/Reviews";
+import ReservationForm from "../../components/details/ReservationForm/ReservationForm";
+import FeaturesList from "../../components/details/FeaturesList/FeaturesList";
+
+import styles from "./CamperDetailsPage.module.css";
 
 const CamperDetailsPage = () => {
   const { id } = useParams();
+
   const [camper, setCamper] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState('features'); // 'features' veya 'reviews'
 
   useEffect(() => {
     const fetchCamperDetails = async () => {
       try {
-        const response = await axiosInstance.get(`/campers/${id}`);
-        setCamper(response.data);
+        const res = await api.get(`/campers/${id}`);
+        setCamper(res.data);
       } catch (error) {
-        console.error("Detaylar yüklenemedi:", error);
+        console.error("Detaylar alınamadı:", error);
       } finally {
         setIsLoading(false);
       }
     };
+
     fetchCamperDetails();
   }, [id]);
 
   if (isLoading) return <Loader />;
-  if (!camper) return <div>Camper is not found!.</div>;
+  if (!camper) return <p>Camper not found</p>;
 
   return (
-    <div className={styles.container}>
-      <CamperInfo camper={camper} />
-      <Gallery images={camper.gallery} />
+    <section className={styles.section}>
       
-      <div className={styles.description}>
-        {camper.description}
-      </div>
-
-      <div className={styles.tabs}>
-        <button 
-          className={activeTab === 'features' ? styles.activeTab : styles.tab} 
-          onClick={() => setActiveTab('features')}
-        >
-          Features
-        </button>
-        <button 
-          className={activeTab === 'reviews' ? styles.activeTab : styles.tab} 
-          onClick={() => setActiveTab('reviews')}
-        >
-          Reviews
-        </button>
-      </div>
-
-      <div className={styles.bottomSection}>
-        <div className={styles.detailsContent}>
-          {activeTab === 'features' ? (
-            <FeaturesList camper={camper} />
-          ) : (
-            <Reviews reviews={camper.reviews} />
-          )}
-        </div>
+      {/* 🔥 TOP */}
+      <div className={styles.topSection}>
         
-        <div className={styles.formContainer}>
+        {/* SOL - GALLERY */}
+        <div className={styles.galleryBox}>
+          <Gallery images={camper.gallery} />
+        </div>
+
+        {/* SAĞ - INFO */}
+        <div className={styles.infoBox}>
+          <CamperInfo camper={camper} />
+          <p className={styles.description}>{camper.description}</p>
+            <FeaturesList camper={ camper} />
+        </div>
+
+      </div>
+
+      {/* 🔥 BOTTOM */}
+      <div className={styles.bottomSection}>
+
+        {/* SOL */}
+        <div className={styles.left}>
+          <Reviews reviews={camper.reviews} />
+        </div>
+
+        {/* SAĞ */}
+        <div className={styles.right}>
           <ReservationForm />
         </div>
+
       </div>
-    </div>
+
+    </section>
   );
 };
 

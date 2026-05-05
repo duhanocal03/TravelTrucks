@@ -1,0 +1,55 @@
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 🔥 TOP */
+.topSection {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+/* SOL */
+.galleryBox {
+    flex: 1;
+    max-width: 700px;
+}
+
+/* SAĞ */
+.infoBox {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* DESCRIPTION */
+.description {
+    font-size: 16px;
+    color: #475467;
+    line-height: 1.5;
+}
+
+/* 🔥 BOTTOM */
+.bottomSection {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* SOL */
+.left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* SAĞ */
+.right {
+    flex: 1;
+}

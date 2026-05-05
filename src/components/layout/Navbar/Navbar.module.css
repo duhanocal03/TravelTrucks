@@ -22,7 +22,14 @@
     color: var(--color-main-black);
     text-decoration: none;
     margin-right: auto;
-    /* Logoyu en sola iter, linkleri merkeze veya sağa çekmek için bunu kullanabiliriz */
+}
+
+.travelText {
+    color: var(--color-main-black);
+}
+
+.trucksText {
+    color: var(--color-navy-blue);
 }
 
 .navLinks {
@@ -32,14 +39,6 @@
     left: 50%;
     transform: translateX(-50%);
 }
-
-/*linkler logonun hemen biraz uzağında olacaksa position: absolute yerine :
-.navLinks {
-  display: flex;
-  gap: 32px;
-  margin-left: 100px; 
-} 
-*/
 
 .link {
     text-decoration: none;
@@ -51,5 +50,5 @@
 
 .active {
     composes: link;
-    color: var(--color-green-main);
+    color: var(--color-green-light);
 }

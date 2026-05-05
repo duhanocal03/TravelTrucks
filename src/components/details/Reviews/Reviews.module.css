@@ -2,68 +2,64 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width: 100%;
 }
 
 .reviewCard {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    /* Tasarımdaki gibi her yorumun kendi gri kutusu olması için */
+    /* background-color: #f7f7f7; */
+    /* Eğer komple kutu gri olsun istersen bunu açabilirsin */
+    margin-bottom: 24px;
 }
 
 .header {
     display: flex;
-    align-items: center;
     gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
-/* Avatar Yuvarlağı */
 .avatar {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #f2f4f7;
-    /* Açık gri arkaplan */
-    color: #d84343;
-    /* UI Kit vurgu rengi */
-    font-size: 24px;
-    font-weight: 600;
+    background-color: #f2f2f2;
+    color: #819b8d;
+    /* Avatar harf rengi butonla aynı tonda */
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .name {
-    font-size: 18px;
     font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
     color: #101828;
     margin: 0;
 }
 
-/* Yıldız Renkleri */
 .stars {
     display: flex;
     gap: 4px;
+    margin-top: 4px;
 }
 
 .filledStar {
-    color: #ffc531;
-    /* Sarı yıldız */
+    color: #ffc107;
+    /* O meşhur altın sarısı yıldızlar */
+    font-size: 16px;
 }
 
 .emptyStar {
-    color: #f2f4f7;
-    /* Gri yıldız */
+    color: #f2f2f2;
+    font-size: 16px;
 }
 
 .comment {
     font-size: 16px;
     line-height: 1.5;
-    color: #475467;
+    color: #6c717b;
     margin: 0;
-}
-
-.noReviews {
-    color: #475467;
-    font-size: 16px;
 }

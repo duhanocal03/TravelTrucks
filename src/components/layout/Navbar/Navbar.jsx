@@ -6,8 +6,9 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <NavLink to="/" className={styles.logo}>
-          TravelTrucks
-        </NavLink>
+  <span className={styles.travelText}>Travel</span>
+  <span className={styles.trucksText}>Trucks</span>
+</NavLink>
         
         <div className={styles.navLinks}>
           <NavLink 
