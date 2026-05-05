@@ -3,9 +3,9 @@ import { fetchCampers } from '../../../features/campers/campersAPI';
 import { resetPagination } from '../../../features/campers/campersSlice';
 import { useAppDispatch, useAppSelector } from '../../../hooks/reduxHooks';
 import LocationInput from '../LocationInput/LocationInput';
-import styles from './FiltersSideBar.module.css';
+import styles from './FiltersSidebar.module.css';
 
-const FiltersSideBar = () => {
+const FiltersSidebar = () => {
   const dispatch = useAppDispatch();
   const filters = useAppSelector((state) => state.filters);
 
@@ -109,4 +109,4 @@ const FiltersSideBar = () => {
   );
 };
 
-export default FiltersSideBar;
+export default FiltersSidebar;
