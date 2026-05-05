@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchCampers } from '../../features/campers/campersAPI';
 import { incrementPage } from '../../features/campers/campersSlice';
 
-//import Container from '../../components/layout/container/Container';
-import FiltersSidebar from '../../components/catalog/FiltersSidebar/FiltersSidebar';
+import FiltersSideBar from '../../components/catalog/FiltersSideBar/FiltersSideBar'
 import CamperCard from '../../components/catalog/CamperCard/CamperCard';
 import Loader from '../../components/common/Loader/Loader';
 import styles from './CatalogPage.module.css';
@@ -37,7 +36,7 @@ const CatalogPage = () => {
           
           {/* Sidebar */}
           <aside className={styles.sidebar}>
-            <FiltersSidebar />
+            <FiltersSideBar />
           </aside>
 
           {/* Content */}

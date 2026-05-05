@@ -4,7 +4,7 @@ const FeaturesCheckbox = ({
   label, 
   icon, 
   name, 
-  type = 'radio', // 'radio' veya 'checkbox' olabilir
+  type = 'radio',
   checked, 
   onChange 
 }) => {
