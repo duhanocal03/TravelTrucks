@@ -28,9 +28,9 @@ A frontend web application that allows users to browse camper models, apply feat
 
 ## Screenshots
 
-| Home Page                                | Catalog Page                                   | Details Page                                   |
-| ---------------------------------------- | ---------------------------------------------- | ---------------------------------------------- |
-| ![Home Page](./screenshots/HomePage.png) | ![Catalog Page](./screenshots/CatalogPage.png) | ![Details Page](./screenshots/DetailsPage.png) |
+| Home Page                                 | Catalog Page                                    | Details Page                                    |
+| ----------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| ![Home Page](./secreenshots/HomePage.png) | ![Catalog Page](./secreenshots/CatalogPage.png) | ![Details Page](./secreenshots/DetailsPage.png) |
 
 ## Tech Stack
 
