@@ -23,6 +23,13 @@ const Navbar = () => {
           >
             Catalog
           </NavLink>
+
+          <NavLink
+            to="/favorites"
+            className={({ isActive }) => isActive ? styles.active : styles.link}
+          >
+            Favorites
+          </NavLink>
         </div>
       </div>
     </nav>

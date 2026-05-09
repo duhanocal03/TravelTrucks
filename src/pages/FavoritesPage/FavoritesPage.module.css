@@ -1,0 +1,74 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+.header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #101828;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #667085;
+}
+
+/* Kartların alt alta veya yan yana dizilmesi için */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    /* Kartlar ortalı dursun */
+}
+
+.emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.emptyIcon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.emptyState h2 {
+    font-size: 24px;
+    color: #101828;
+    margin-bottom: 12px;
+}
+
+.emptyState p {
+    color: #667085;
+    max-width: 400px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 18px;
+    color: #475467;
+}
+
+/* Tablet ve Masaüstü için kart dizilimini gerekirse değiştirebilirsin */
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px;
+    }
+}
